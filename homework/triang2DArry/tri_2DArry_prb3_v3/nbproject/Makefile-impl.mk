@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=tri_2DArry_prb3_v2
+PROJECTNAME=tri_2DArry_prb3_v3
 
 # Active Configuration
 DEFAULTCONF=Debug
