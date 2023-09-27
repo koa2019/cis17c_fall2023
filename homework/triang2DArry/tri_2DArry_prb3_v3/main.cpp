@@ -133,7 +133,7 @@ void mrkSort(TriMatx *triMt){
 void destroy(TriMatx *triMt){
     //Delete every row of the triangular array
     for(int i=0;i<triMt->size;i++){
-        delete []triMt->data[i];
+        delete []triMt->data[i];// Destroys **data rows
     }
     //Delete the pointers
     delete []triMt->data;
