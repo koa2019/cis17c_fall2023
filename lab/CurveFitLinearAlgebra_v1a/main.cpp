@@ -32,15 +32,15 @@ int main(){
            sye=f.getSumYE();
     cout<<row<<" "<<col<<endl;
     
-//    cout<<fixed<<setprecision(2)
-//        <<"sumX:  "<<sx
-//        <<"\nsumY:  "<<sy
-//        <<"\nsumX^2: "<<sx*sx     
-//        <<"\nsumXY: "<<sxy   
-//        <<"\nsumYE: "<<sye        
-//        <<endl;
-    //double m = (sy*sx-(row*sxy));//-2167583.21
-    ///((sx*sx)-(row*(sx*sx)) );
+    cout<<fixed<<setprecision(2)
+        <<"n:      "<<row<<endl
+        <<"sumX:   "<<sx<<endl
+        //<<"\nsumY:  "<<sy<<endl
+        <<"sumX*X: "<<sx*sx<<endl     
+        <<"sumXY:  "<<sxy<<endl   
+        <<"sumY':  "<<sye<<endl        
+        <<endl;
+    //double m = ((sye*sx)-(Rows*sxye))/((sx*sx)-(Rows*sxsx));
     //cout<<"slope: "<<m<<endl;
     double b=(sy-.555555556*sx)/row;  
     cout<<"b: "<<b<<endl;

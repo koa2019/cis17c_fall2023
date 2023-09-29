@@ -1,9 +1,8 @@
-/* 
- * File:    main.cpp
+/* File:    main.cpp
  * Author:  Danielle F
- * Created: 08-24-2023 @ 10 PM
+ * Created: 09-28-2023 @ 10 PM
  * Purpose:  
- */
+*/
 
 //System Libraries
 #include <bits/stdc++.h> 
@@ -33,4 +32,4 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-/**********  Function Definitions  **************/
+/**********  Function Implementations  **************/

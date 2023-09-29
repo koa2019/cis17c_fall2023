@@ -143,7 +143,8 @@ Table<T>::~Table(){
 // Calls CLass RowAray's getter function
 template<class T> 
 T Table<T>::getData(int row,int col)const{
-    //cout<<"\t["<<col<<","<<row<<"]";
+    //cout<<"\tIn getData col,row ["<<col<<","<<row<<"] = "<<columns[col]->getData(row)<<endl;
+    //cout<<"\tIn getData row,col ["<<row<<","<<col<<"] = "<<columns[row]->getData(col)<<endl;
     return columns[col]->getData(row);
 }
 
@@ -198,7 +199,7 @@ int main(int argc, char** argv) {
    cout<<"Test the Integer Row with Rows"<<endl;
    prntRow(&a,rows); // Prints a row
    cout<<"Test the Float Row with Columns"<<endl;
-   prntRow(&b,cols);  // Prints a row
+   //prntRow(&b,cols);  // Prints a row
    
    //Test out the Table with a float
    Table<float> tab1(rows,cols); //Calls Default constructor
@@ -208,9 +209,9 @@ int main(int argc, char** argv) {
    cout<<"Float Table 3 size is [row,col] = Table 1 + Table 2 ["
            <<rows<<","<<cols<<"]";
    cout<<endl<<"Table 1"<<endl;
-   prntTab(tab1);
+   //prntTab(tab1);
    cout<<"Table 2 copy of Table 1"<<endl;
-   prntTab(tab2);
+   //prntTab(tab2);
    cout<<"Table 3 addition of Table 1 and Table 2"<<endl;
    prntTab(tab3);
    
@@ -231,7 +232,7 @@ void prntRow(T *a,int perLine){
 template<class T>
 void prntTab(const Table<T> &a){
     cout<<fixed<<setprecision(1)<<showpoint<<endl;
-    //cout<<"\tszRow="<<a.getSzRow()<<"  szCol="<<a.getSzCol()<<endl;
+    cout<<"\tszRow="<<a.getSzRow()<<"  szCol="<<a.getSzCol()<<endl;
     for(int row=0;row<a.getSzRow();row++){
         for(int col=0;col<a.getSzCol();col++){
             cout<<setw(8)<<a.getData(row,col);
