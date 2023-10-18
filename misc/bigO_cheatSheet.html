@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        
+            <title>Big O Cheat Sheet – Time Complexity Chart</title>
+        
+        <meta name="HandheldFriendly" content="True">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+        
+            <link rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" href="bigO_cheatSheet_files/css2.css">
+        
+
+        
+        
+    <link rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" href="bigO_cheatSheet_files/prism.min.css">
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://cdn.freecodecamp.org/news-assets/prism/1.29.0/themes/prism.min.css"
+  />
+</noscript>
+<link rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" href="bigO_cheatSheet_files/prism-unescaped-markup.min.css">
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://cdn.freecodecamp.org/news-assets/prism/1.29.0/plugins/unescaped-markup/prism-unescaped-markup.min.css"
+  />
+</noscript>
+
+<script type="text/javascript" async="" src="bigO_cheatSheet_files/js_002"></script><script src="bigO_cheatSheet_files/f.txt"></script><script src="bigO_cheatSheet_files/f_002.txt" id="google_shimpl"></script><script type="text/javascript" async="" src="bigO_cheatSheet_files/js"></script><script type="text/javascript" async="" src="bigO_cheatSheet_files/analytics.js"></script><script async="" src="bigO_cheatSheet_files/gtm.js"></script><script defer="defer" src="bigO_cheatSheet_files/prism-core.min.js"></script>
+<script defer="defer" src="bigO_cheatSheet_files/prism-autoloader.min.js"></script>
+
+
+
+        
+        <link rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" href="bigO_cheatSheet_files/global-26e2f3cde9.css">
+        <link rel="stylesheet" type="text/css" href="bigO_cheatSheet_files/screen-561dcb294a.css">
+        <link rel="stylesheet" type="text/css" href="bigO_cheatSheet_files/search-bar-124f5f949c.css">
+
+        
+        <script defer="defer" src="bigO_cheatSheet_files/algoliasearch.min.js"></script>
+        <script defer="defer" src="bigO_cheatSheet_files/autocomplete.min.js"></script>
+
+        
+        <script defer="defer" src="bigO_cheatSheet_files/dayjs.min.js"></script>
+        <script defer="defer" src="bigO_cheatSheet_files/localizedFormat.min.js"></script>
+        <script defer="defer" src="bigO_cheatSheet_files/relativeTime.min.js"></script>
+
+        
+        
+            <script defer="defer" src="bigO_cheatSheet_files/en.min.js"></script>
+        
+
+        
+        <script>let client,index;document.addEventListener("DOMContentLoaded",(()=>{client=algoliasearch("QMJYL5WYTI","89770b24481654192d7a5c402c6ad9a0"),index=client.initIndex("news")})),document.addEventListener("DOMContentLoaded",(()=>{const e=window.screen.width,t=window.screen.height,n=e>=767&&t>=768?8:5,o=document.getElementById("search-form"),s=document.getElementById("search-input"),a=document.getElementById("dropdown-container");let i,d,c;s.addEventListener("input",(e=>{i=e.target.value})),o.addEventListener("submit",(e=>{e.preventDefault(),function(){if(d=document.getElementsByClassName("aa-cursor")[0],d&&i){const e=d.querySelector("a").href;window.location.assign(e)}else!d&&i&&c&&window.location.assign(`https://www.freecodecamp.org/news/search?query=${i}`)}()}));const l=autocomplete("#search-input",{hint:!1,keyboardShortcuts:["s",191],openOnFocus:!0,appendTo:a,debug:!0},[{source:autocomplete.sources.hits(index,{hitsPerPage:n}),debounce:250,templates:{suggestion:e=>(c=!0,`\n            <a href="${e.url}">\n              <div class="algolia-result">\n                <span>${e._highlightResult.title.value}</span>\n              </div>\n            </a>\n          `),empty:()=>(c=!1,'\n            <div class="aa-suggestion footer-suggestion no-hits-footer">\n              <div class="algolia-result">\n                <span>\n                  No tutorials found\n                </span>\n              </div>\n            </div>\n          '),footer:e=>{if(!e.isEmpty)return`\n              <div class="aa-suggestion footer-suggestion">\n                <a id="algolia-footer-selector" href="https://www.freecodecamp.org/news/search?query=${i}">\n                  <div class="algolia-result algolia-footer">\n                    See all results for ${i}\n                  </div>\n                </a>\n              </div>\n            `}}}]).on("autocomplete:selected",((e,t,n,o)=>{d=t?t.url:`https://www.freecodecamp.org/news/search?query=${i}`,"click"!==o.selectionMethod&&"tabKey"!==o.selectionMethod&&c&&window.location.assign(d)}));document.addEventListener("click",(e=>{e.target!==s&&l.autocomplete.close()}))})),document.addEventListener("DOMContentLoaded",(()=>{dayjs.extend(dayjs_plugin_localizedFormat),dayjs.extend(dayjs_plugin_relativeTime),dayjs.locale("en")}));const isAuthenticated=document.cookie.split(";").some((e=>e.trim().startsWith("jwt_access_token="))),isDonor=document.cookie.split(";").some((e=>e.trim().startsWith("isDonor=true")));</script>
+
+        
+        
+    
+        <script data-ad-client="ca-pub-9482786369113753" src="bigO_cheatSheet_files/f_003.txt" crossorigin="anonymous" async="" data-checked-head="true"></script>
+    
+
+
+        
+        
+        
+
+        
+        
+
+        <link rel="icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico" type="image/png">
+        
+        
+            <link rel="canonical" href="https://www.freecodecamp.org/news/big-o-cheat-sheet-time-complexity-chart/">
+        
+        <meta name="referrer" content="no-referrer-when-downgrade">
+
+        
+
+        
+    <meta name="description" content="An algorithm is a set of well-defined instructions for solving a specific problem. You can solve these problems in various ways. This means that the method you use to arrive at the same solution may differ from mine, but we should both get the same result. Because there are various">
+
+    
+    <meta property="og:site_name" content="freeCodeCamp.org">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Big O Cheat Sheet – Time Complexity Chart">
+    
+        <meta property="og:description" content="An algorithm is a set of well-defined instructions for solving a specific problem. You can solve these problems in various ways. This means that the method you use to arrive at the same solution may differ from mine, but we should both get the same result. Because there are various">
+    
+    <meta property="og:url" content="https://www.freecodecamp.org/news/big-o-cheat-sheet-time-complexity-chart/">
+    <meta property="og:image" content="https://www.freecodecamp.org/news/content/images/2022/10/cover-template--12-.png">
+    <meta property="article:published_time" content="2022-10-05T15:00:53.000Z">
+    <meta property="article:modified_time" content="2023-04-10T09:41:44.000Z">
+    
+        <meta property="article:tag" content="Big O Notation">
+    
+        <meta property="article:tag" content="Algorithms">
+    
+        <meta property="article:tag" content="JavaScript">
+    
+        <meta property="article:tag" content="Interview Questions">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/freecodecamp">
+    
+        <meta property="article:author" content="olawanletjoel">
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Big O Cheat Sheet – Time Complexity Chart">
+    
+        <meta name="twitter:description" content="An algorithm is a set of well-defined instructions for solving a specific problem. You can solve these problems in various ways. This means that the method you use to arrive at the same solution may differ from mine, but we should both get the same result. Because there are various">
+    
+    <meta name="twitter:url" content="https://www.freecodecamp.org/news/big-o-cheat-sheet-time-complexity-chart/">
+    <meta name="twitter:image" content="https://www.freecodecamp.org/news/content/images/2022/10/cover-template--12-.png">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Joel Olawanle">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Big O Notation, Algorithms, JavaScript, Interview Questions">
+    <meta name="twitter:site" content="@freecodecamp">
+    
+        <meta name="twitter:creator" content="@olawanle_joel">
+    
+
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="900">
+
+
+        
+    <script type="application/ld+json">{
+	"@context": "https://schema.org",
+	"@type": "Article",
+	"publisher": {
+		"@type": "Organization",
+		"name": "freeCodeCamp.org",
+		"url": "https://www.freecodecamp.org/news/",
+		"logo": {
+			"@type": "ImageObject",
+			"url": "https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg",
+			"width": 2100,
+			"height": 240
+		}
+	},
+	"image": {
+		"@type": "ImageObject",
+		"url": "https://www.freecodecamp.org/news/content/images/2022/10/cover-template--12-.png",
+		"width": 1600,
+		"height": 900
+	},
+	"url": "https://www.freecodecamp.org/news/big-o-cheat-sheet-time-complexity-chart/",
+	"mainEntityOfPage": {
+		"@type": "WebPage",
+		"@id": "https://www.freecodecamp.org/news/"
+	},
+	"datePublished": "2022-10-05T15:00:53.000Z",
+	"dateModified": "2023-04-10T09:41:44.000Z",
+	"keywords": "Big O Notation, Algorithms, JavaScript, Interview Questions",
+	"description": "An algorithm is a set of well-defined instructions for solving a specific\nproblem. You can solve these problems in various ways.\n\nThis means that the method you use to arrive at the same solution may differ\nfrom mine, but we should both get the same result.\n\nBecause there are various ways to solve a problem, there must be a way to\nevaluate these solutions or algorithms in terms of performance and efficiency\n(the time it will take for your algorithm to run/execute and the total amount of\nmemory i",
+	"headline": "Big O Cheat Sheet – Time Complexity Chart",
+	"author": {
+		"@type": "Person",
+		"name": "Joel Olawanle",
+		"url": "https://www.freecodecamp.org/news/author/joel-olawanle/",
+		"sameAs": [
+			"https://joelolawanle.com/",
+			"https://www.facebook.com/olawanletjoel",
+			"https://twitter.com/olawanle_joel"
+		],
+		"image": {
+			"@type": "ImageObject",
+			"url": "https://www.freecodecamp.org/news/content/images/2022/06/1654890413623.jpg",
+			"width": 800,
+			"height": 800
+		}
+	}
+}</script>
+
+
+        <meta name="generator" content="Eleventy">
+        <link rel="alternate" type="application/rss+xml" title="freeCodeCamp.org" href="https://www.freecodecamp.org/news/rss/">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+
+<!-- Web Monetization (https://webmonetization.org/) -->
+<meta name="monetization" content="$ilp.uphold.com/LJmbPn7WD4JB">
+<!-- end Web Monetization -->
+
+<!-- dataLayer setup -->
+<script>
+window.dataLayer = window.dataLayer || [];
+</script>
+<!-- End dataLayer setup -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5D6RKKP');</script>
+<!-- End Google Tag Manager -->
+
+
+<meta name="google-site-verification" content="b4tITLzEeeZGEpvD4mGNf3khKM4fvqejQaz9SYBQP8E">
+
+        
+    <meta http-equiv="origin-trial" content="A7CQXglZzTrThjGTBEn1rWTxHOEtkWivwzgea+NjyardrwlieSjVuyG44PkYgIPGs8Q9svD8sF3Yedn0BBBjXAkAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A3vKT9yxRPjmXN3DpIiz58f5JykcWHjUo/W7hvmtjgh9jPpQgem9VbADiNovG8NkO6mRmk70Kex8/KUqAYWVWAEAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A4A26Ymj79UVY7C7JGUS4BG1s7MdcDokAQf/RP0paks+RoTYbXHxceT/5L4iKcsleFCngi75YfNRGW2+SpVv1ggAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"></head>
+    
+    
+        <body class="home-template">
+    
+        <div class="site-wrapper" style="height: auto !important; min-height: 0px !important;">
+            <nav class="site-nav nav-padding">
+    <div class="site-nav-left">
+        
+<form id="search-form" data-test-label="search-bar">
+    <div role="search" class="searchbox__wrapper">
+        <label class="fcc_sr_only" for="search-input">
+            Search
+        </label>
+        <input type="search" placeholder="
+    Search 10,400+ tutorials
+" id="search-input" class="aa-input" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" style="" dir="auto"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: optimizelegibility; text-transform: none;"></pre>
+        <button type="submit" class="ais-SearchBox-submit">
+            <svg class="ais-SearchBox-submitIcon" xmlns="https://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 40 40">
+    <path d="M26.804 29.01c-2.832 2.34-6.465 3.746-10.426 3.746C7.333 32.756 0 25.424 0 16.378 0 7.333 7.333 0 16.378 0c9.046 0 16.378 7.333 16.378 16.378 0 3.96-1.406 7.594-3.746 10.426l10.534 10.534c.607.607.61 1.59-.004 2.202-.61.61-1.597.61-2.202.004L26.804 29.01zm-10.426.627c7.323 0 13.26-5.936 13.26-13.26 0-7.32-5.937-13.257-13.26-13.257C9.056 3.12 3.12 9.056 3.12 16.378c0 7.323 5.936 13.26 13.258 13.26z"></path>
+</svg>
+
+            <span class="fcc_sr_only">Submit your search query</span>
+        </button>
+        <div id="dropdown-container"><span class="algolia-autocomplete" style="position: absolute; z-index: 100; display: none; direction: ltr;"><span class="aa-dropdown-menu" style="display: block; left: 0px; right: auto;" role="listbox" id="algolia-autocomplete-listbox-0"><div class="aa-dataset-1"></div></span></span></div>
+    </div>
+</form>
+
+    </div>
+    <div class="site-nav-middle">
+        <a class="site-nav-logo" href="https://www.freecodecamp.org/news" data-test-label="site-nav-logo"><img src="bigO_cheatSheet_files/fcc_primary.svg" alt="freeCodeCamp.org"></a>
+    </div>
+    <div class="site-nav-right">
+        <div class="nav-group">
+            <a class="nav-forum" id="nav-forum" rel="noopener noreferrer" href="https://forum.freecodecamp.org/" target="_blank" data-test-label="forum-button">Forum</a>
+            <a class="toggle-button-nav" id="nav-donate" rel="noopener noreferrer" href="https://www.freecodecamp.org/donate/" target="_blank" data-test-label="donate-button">Donate</a>
+        </div>
+    </div>
+</nav>
+
+
+            
+            <a class="banner" id="banner" data-test-label="banner" rel="noopener noreferrer" target="_blank" href="https://www.freecodecamp.org/" text-variation="default">
+    <p id="banner-text">Learn to code — <span>free 3,000-hour curriculum</span></p>
+</a>
+
+
+    
+    <script>document.addEventListener("DOMContentLoaded",(()=>{const e=document.getElementById("banner"),t=document.getElementById("banner-text");isAuthenticated?(t.innerHTML="Support our charity and our mission. <span>Donate to freeCodeCamp.org</span>.",e.href="https://www.freecodecamp.org/donate",e.setAttribute("text-variation","authenticated")):isDonor?(t.innerHTML="Thank you for supporting freeCodeCamp through <span>your donations</span>.",e.href="https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp/",e.setAttribute("text-variation","donor")):(t.innerHTML="Learn to code — <span>free 3,000-hour curriculum</span>",e.href="https://www.freecodecamp.org/",e.setAttribute("text-variation","default"))}));</script>
+
+
+            <div id="error-message"></div>
+
+            
+    <main id="site-main" class="post-template site-main outer" style="height: auto !important;">
+        <div class="inner ad-layout" style="height: auto !important;">
+            <article class="post-full post " style="height: auto !important;">
+                <header class="post-full-header">
+                    <section class="post-full-meta">
+                        <time class="post-full-meta-date" datetime="Wed Oct 05 2022 15:00:53 GMT+0000 (Coordinated Universal Time)">
+                            October 5, 2022
+                        </time>
+                        
+                            <span class="date-divider">/</span>
+                            <a dir="ltr" href="https://www.freecodecamp.org/news/tag/big-o-notation/">
+                                #Big O Notation
+                            </a>
+                        
+                    </section>
+                    <h1 class="post-full-title">Big O Cheat Sheet – Time Complexity Chart</h1>
+                </header>
+                <div class="post-full-author-header" data-test-label="author-header-no-bio">
+                    
+                        
+                            
+    
+    
+    
+
+    <section class="author-card" data-test-label="author-card">
+        
+            
+    <img srcset="bigO_cheatSheet_files/1654890413623.jpg 60w" sizes="60px" src="bigO_cheatSheet_files/1654890413623.jpg" class="author-profile-image" alt="Joel Olawanle" width="800" height="800" onerror="this.style.display='none'" data-test-label="profile-image">
+  
+        
+
+        <section class="author-card-content author-card-content-no-bio">
+            <span class="author-card-name">
+                <a href="https://www.freecodecamp.org/news/author/joel-olawanle/" data-test-label="profile-link">
+                    
+                        Joel Olawanle
+                    
+                </a>
+            </span>
+            
+        </section>
+    </section>
+
+                        
+                    
+                </div>
+                
+                    <figure class="post-full-image">
+                        
+    <picture>
+      <source media="(max-width: 700px)" sizes="1px" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7 1w">
+      <source media="(min-width: 701px)" sizes="(max-width: 800px) 400px, (max-width: 1170px) 700px, 1400px" srcset="bigO_cheatSheet_files/cover-template--12-_004.png 300w, bigO_cheatSheet_files/cover-template--12-_003.png 600w, bigO_cheatSheet_files/cover-template--12-_002.png 1000w, bigO_cheatSheet_files/cover-template--12-.png 2000w">
+      <img onerror="this.style.display='none'" src="bigO_cheatSheet_files/cover-template--12-.png" alt="Big O Cheat Sheet – Time Complexity Chart" ,="" width="1600" height="900">
+    </picture>
+  
+                    </figure>
+                
+                <section class="post-full-content" style="height: auto !important; min-height: 0px !important;">
+                    <div class="post-and-sidebar" style="height: auto !important;">
+                        <section class="post-content " data-test-label="post-content">
+                            
+<p>An algorithm is a set of well-defined instructions for solving a specific problem. You can solve these problems in various ways.</p>
+<p>This means that the method you use to arrive at the same solution may differ from mine, but we should both get the same result.</p>
+<p>Because there are various ways to solve a problem, there must be a 
+way to evaluate these solutions or algorithms in terms of performance 
+and efficiency (the time it will take for your algorithm to run/execute 
+and the total amount of memory it will consume).</p>
+<p>This is critical for programmers to ensure that their applications run properly and to help them write clean code.</p>
+<p>This is where Big O Notation enters the picture. Big O Notation is a 
+metric for determining the efficiency of an algorithm. It allows you to 
+estimate how long your code will run on different sets of inputs and 
+measure how effectively your code scales as the size of your input 
+increases.</p>
+<h2 id="whatisbigo">What is Big O?</h2>
+<p>Big O, also known as Big O notation, represents an algorithm's 
+worst-case complexity. It uses algebraic terms to describe the 
+complexity of an algorithm.</p>
+<p>Big O defines the runtime required to execute an algorithm by 
+identifying how the performance of your algorithm will change as the 
+input size grows. But it does not tell you how fast your algorithm's 
+runtime is.</p>
+<p>Big O notation measures the efficiency and performance of your algorithm using time and space complexity.</p>
+<h3 id="whatistimeandspacecomplexity">What is Time and Space Complexity?</h3>
+<p>One major underlying factor affecting your program's performance and efficiency is the hardware, OS, and CPU you use.</p>
+<p>But you don't consider this when you analyze an algorithm's 
+performance. Instead, the time and space complexity as a function of the
+ input's size are what matters.</p>
+<p>An algorithm's time complexity specifies how long it will take to execute an algorithm <strong>as a function of its input size</strong>. Similarly, an algorithm's space complexity specifies the total amount of space or memory required to execute an algorithm <strong>as a function of the size of the input</strong>.</p>
+<p>We will be focusing on time complexity in this guide. This will be an
+ in-depth cheatsheet to help you understand how to calculate the time 
+complexity for any algorithm.</p>
+<h3 id="whyistimecomplexityafunctionofitsinputsize">Why is time complexity a function of its input size?</h3>
+<p>To perfectly grasp the concept of "as a function of input size," 
+imagine you have an algorithm that computes the sum of numbers based on 
+your input. If your input is 4, it will add 1+2+3+4 to output 10; if 
+your input is 5, it will output 15 (meaning 1+2+3+4+5).</p>
+<pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">calculateSum</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">input</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> input<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    sum <span class="token operator">+=</span> i<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>In the code above, we have three statements:</p>
+<p><img src="bigO_cheatSheet_files/s_2D428973624E7FC84C7D69D11421DE762BEA6B6F3361231FCDCAE0_002.png" alt="s_2D428973624E7FC84C7D69D11421DE762BEA6B6F3361231FCDCAE0425D14526F_1664881245657_Untitled.drawio+16" width="901" height="221" loading="lazy"></p>
+<p>Looking at the image above, we only have three statements. Still, 
+because there is a loop, the second statement will be executed based on 
+the input size, so if the input is four, the second statement (statement
+ 2) will be executed four times, meaning the entire algorithm will run 
+six (4 + 2) times.</p>
+<p>In plain terms, the algorithm will run <strong>input + 2</strong> times, where input can be any number. This shows that <strong>it's expressed in terms of the input. In other words, it is a function of the input size</strong>.</p>
+<p>In Big O, there are six major types of complexities (time and space):</p>
+<ul>
+<li>Constant: O(1)</li>
+<li>Linear time: O(n)</li>
+<li>Logarithmic time: O(n log n)</li>
+<li>Quadratic time: O(n^2)</li>
+<li>Exponential time: O(2^n)</li>
+<li>Factorial time: O(n!)</li>
+</ul>
+<p>Before we look at examples for each time complexity, let's understand the Big O time complexity chart.</p>
+<h2 id="bigocomplexitychart">Big O Complexity Chart</h2>
+<p>The Big O chart, also known as the Big O graph, is an asymptotic 
+notation used to express the complexity of an algorithm or its 
+performance as a function of input size.</p>
+<p>This helps programmers identify and fully understand the worst-case 
+scenario and the execution time or memory required by an algorithm.</p>
+<p>The <a href="https://www.freecodecamp.org/news/big-o-cheat-sheet-time-complexity-chart/bigocheatsheet.com">following graph</a> illustrates Big O complexity:</p>
+<p><img src="bigO_cheatSheet_files/s_2D428973624E7FC84C7D69D11421DE762BEA6B6F3361231FCDCAE0425D.png" alt="Image from bigocheatsheet.com" width="745" height="456" loading="lazy"></p>
+<p>The Big O chart above shows that O(1), which stands for constant time
+ complexity, is the best. This implies that your algorithm processes 
+only one statement without any iteration. Then there's O(log n), which 
+is good, and others like it, as shown below:</p>
+<ul>
+<li><strong>O(1)</strong> - Excellent/Best</li>
+<li><strong>O(log n)</strong> - Good</li>
+<li><strong>O(n)</strong> - Fair</li>
+<li><strong>O(n log n)</strong> - Bad</li>
+<li><strong>O(n^2)</strong>, <strong>O(2^n)</strong> and <strong>O(n!)</strong> - Horrible/Worst</li>
+</ul>
+<p>You now understand the various time complexities, and you can 
+recognize the best, good, and fair ones, as well as the bad and worst 
+ones (always avoid the bad and worst time complexity).</p>
+<p>The next question that comes to mind is how you know which algorithm 
+has which time complexity, given that this is meant to be a cheatsheet 
+😂.</p>
+<ul>
+<li>When your calculation is not dependent on the input size, it is a constant time complexity (O(1)).</li>
+<li>When the input size is reduced by half, maybe when iterating, handling <a href="https://joelolawanle.com/posts/recursion-in-javascript-explained-for-beginners">recursion</a>, or whatsoever, it is a logarithmic time complexity (O(log n)).</li>
+<li>When you have a single loop within your algorithm, it is linear time complexity (O(n)).</li>
+<li>When you have nested loops within your algorithm, meaning a loop in a loop, it is quadratic time complexity (O(n^2)).</li>
+<li>When the growth rate doubles with each addition to the input, it is exponential time complexity (O2^n).</li>
+</ul>
+<p>Let's begin by describing each time's complexity with examples. It's 
+important to note that I'll use JavaScript in the examples in this 
+guide, but the programming language isn't important as long as you 
+understand the concept and each time complexity.</p>
+<h2 id="bigotimecomplexityexamples">Big O Time Complexity Examples</h2>
+<h3 id="constanttimeo1">Constant Time: O(1)</h3>
+<p>When your algorithm is not dependent on the input size n, it is said 
+to have a constant time complexity with order O(1). This means that the 
+run time will always be the same regardless of the input size.</p>
+<p>For example, if an algorithm is to return the first element of an 
+array. Even if the array has 1 million elements, the time complexity 
+will be constant if you use this approach:</p>
+<pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">firstElement</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">array</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> array<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> score <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">55</span><span class="token punctuation">,</span> <span class="token number">67</span><span class="token punctuation">,</span> <span class="token number">94</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">firstElement</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 12</span>
+</code></pre>
+<p>The function above will require only one execution step, meaning the function is in constant time with time complexity O(1).</p>
+<p>But as I said earlier, there are various ways to achieve a solution 
+in programming. Another programmer might decide to first loop through 
+the array before returning the first element:</p>
+<pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">firstElement</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">array</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> array<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> array<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> score <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">55</span><span class="token punctuation">,</span> <span class="token number">67</span><span class="token punctuation">,</span> <span class="token number">94</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">firstElement</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 12</span>
+</code></pre>
+<p>This is just an example – likely nobody would do this. But if there 
+is a loop, this is no longer constant time but now linear time with the 
+time complexity O(n).</p>
+<h3 id="lineartimeon">Linear Time: O(n)</h3>
+<p>You get linear time complexity when the running time of an algorithm 
+increases linearly with the size of the input. This means that when a 
+function has an iteration that iterates over an input size of n, it is 
+said to have a time complexity of order O(n).</p>
+<p>For example, if an algorithm is to return the factorial of any 
+inputted number. This means if you input 5 then you are to loop through 
+and multiply 1 by 2 by 3 by 4 and by 5 and then output 120:</p>
+<pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">calcFactorial</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> factorial <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    factorial <span class="token operator">=</span> factorial <span class="token operator">*</span> i<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> factorial<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">calcFactorial</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 120</span>
+</code></pre>
+<p>The fact that the runtime depends on the input size means that the time complexity is linear with the order O(n).</p>
+<h3 id="logarithmtimeologn">Logarithm Time: O(log n)</h3>
+<p>This is similar to linear time complexity, except that the runtime 
+does not depend on the input size but rather on half the input size. 
+When the input size decreases on each iteration or step, an algorithm is
+ said to have logarithmic time complexity.</p>
+<p>This method is the second best because your program runs for half the
+ input size rather than the full size. After all, the input size 
+decreases with each iteration.</p>
+<p>A great example is binary search functions, which divide your sorted array based on the target value.</p>
+<p>For example, suppose you use a binary search algorithm to find the index of a given element in an array:</p>
+<pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">binarySearch</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">array<span class="token punctuation">,</span> target</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> firstIndex <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> lastIndex <span class="token operator">=</span> array<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>firstIndex <span class="token operator">&lt;=</span> lastIndex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> middleIndex <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">(</span>firstIndex <span class="token operator">+</span> lastIndex<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>array<span class="token punctuation">[</span>middleIndex<span class="token punctuation">]</span> <span class="token operator">===</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> middleIndex<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>array<span class="token punctuation">[</span>middleIndex<span class="token punctuation">]</span> <span class="token operator">&gt;</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      lastIndex <span class="token operator">=</span> middleIndex <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      firstIndex <span class="token operator">=</span> middleIndex <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> score <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">,</span> <span class="token number">45</span><span class="token punctuation">,</span> <span class="token number">67</span><span class="token punctuation">,</span> <span class="token number">96</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">binarySearch</span><span class="token punctuation">(</span>score<span class="token punctuation">,</span> <span class="token number">96</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>In the code above, since it is a binary search, you first get the 
+middle index of your array, compare it to the target value, and return 
+the middle index if it is equal. Otherwise, you must check if the target
+ value is greater or less than the middle value to adjust the first and 
+last index, reducing the input size by half.</p>
+<p>Because for every iteration the input size reduces by half, the time complexity is logarithmic with the order O(log n).</p>
+<h3 id="quadratictimeon2">Quadratic Time: O(n^2)</h3>
+<p>When you perform nested iteration, meaning having a loop in a loop, the time complexity is quadratic, which is horrible.</p>
+<p>A perfect way to explain this would be if you have an array with n 
+items. The outer loop will run n times, and the inner loop will run n 
+times for each iteration of the outer loop, which will give total n^2 
+prints. If the array has ten items, ten will print 100 times (10^2).</p>
+<p>Here is an example by <a href="https://jarednielsen.com/big-o-quadratic-time-complexity/">Jared Nielsen</a>, where you compare each element in an array to output the index when two elements are similar:</p>
+<pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">matchElements</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">array</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> array<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> array<span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">!==</span> j <span class="token operator">&amp;&amp;</span> array<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">===</span> array<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Match found at </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>i<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> and </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>j<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token string">"No matches found 😞"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> fruit <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"🍓"</span><span class="token punctuation">,</span> <span class="token string">"🍐"</span><span class="token punctuation">,</span> <span class="token string">"🍊"</span><span class="token punctuation">,</span> <span class="token string">"🍌"</span><span class="token punctuation">,</span> <span class="token string">"🍍"</span><span class="token punctuation">,</span> <span class="token string">"🍑"</span><span class="token punctuation">,</span> <span class="token string">"🍎"</span><span class="token punctuation">,</span> <span class="token string">"🍈"</span><span class="token punctuation">,</span> <span class="token string">"🍊"</span><span class="token punctuation">,</span> <span class="token string">"🍇"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">matchElements</span><span class="token punctuation">(</span>fruit<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "Match found at 2 and 8"</span>
+</code></pre>
+<p>In the example above, there is a nested loop, meaning that the time complexity is quadratic with the order O(n^2).</p>
+<h3 id="exponentialtimeo2n">Exponential Time: O(2^n)</h3>
+<p>You get exponential time complexity when the growth rate doubles with
+ each addition to the input (n), often iterating through all subsets of 
+the input elements. Any time an input unit increases by 1, the number of
+ operations executed is doubled.</p>
+<p>The recursive Fibonacci sequence is a good example. Assume you're 
+given a number and want to find the nth element of the Fibonacci 
+sequence.</p>
+<p>The Fibonacci sequence is a mathematical sequence in which each 
+number is the sum of the two preceding numbers, where 0 and 1 are the 
+first two numbers. The third number in the sequence is 1, the fourth is 
+2, the fifth is 3, and so on... (0, 1, 1, 2, 3, 5, 8, 13, …).</p>
+<p>This means that if you pass in 6, then the 6th element in the Fibonacci sequence would be 8:</p>
+<pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">recursiveFibonacci</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> n<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token function">recursiveFibonacci</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">recursiveFibonacci</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">recursiveFibonacci</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 8</span>
+</code></pre>
+<p>In the code above, the algorithm specifies a growth rate that doubles
+ every time the input data set is added. This means the time complexity 
+is exponential with an order O(2^n).</p>
+<h2 id="wrappingup">Wrapping Up</h2>
+<p>In this guide, you have learned what time complexity is all about, 
+how performance is determined using the Big O notation, and the various 
+time complexities that exists with examples.</p>
+<p>You can learn more via freeCodeCamp's <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/">JavaScript Algorithms and Data Structures curriculum</a>.</p>
+<p><a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/"></a></p>
+<p>Happy learning!</p>
+<p>You can access over 200 of my articles by <a href="https://joelolawanle.com/contents">visiting my website</a>. You can also use the search field to see if I've written a specific article.</p>
+<!--kg-card-end: markdown-->
+
+                        </section>
+                        
+                            <div class="sidebar" style="height: auto !important;">
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper" style="height: auto !important; min-height: 0px !important;">
+    
+    <div class="ad-text" data-test-label="ad-text">ADVERTISEMENT</div>
+    <ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_1_host" style="border: medium; height: 600px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;" tabindex="0" title="Advertisement" aria-label="Advertisement"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:300px;height:600px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="bigO_cheatSheet_files/ads.htm" data-google-container-id="a!2" data-google-query-id="CLmRqI6R3oEDFfADTwgdlegCCQ" data-load-complete="true"></iframe></div></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper" style="height: auto !important; min-height: 0px !important;">
+    
+    <div class="ad-text" data-test-label="ad-text">ADVERTISEMENT</div>
+    <ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_2_host" style="border: medium; height: 600px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;" tabindex="0" title="Advertisement" aria-label="Advertisement"><iframe id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0;width:300px;height:600px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="bigO_cheatSheet_files/ads.htm" data-google-container-id="a!3" data-google-query-id="CJC0q46R3oEDFTU2TwgdSNAEJw" data-load-complete="true"></iframe></div></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper" style="height: auto !important; min-height: 0px !important;">
+    
+    <div class="ad-text" data-test-label="ad-text">ADVERTISEMENT</div>
+    <ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_3_host" style="border: medium; height: 600px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;" tabindex="0" title="Advertisement" aria-label="Advertisement"><iframe id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;border:0;width:300px;height:600px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="bigO_cheatSheet_files/ads.htm" data-google-container-id="a!4" data-google-query-id="CPfGrI6R3oEDFbQKTwgdUNsGMg" data-load-complete="true"></iframe></div></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper" style="height: auto !important; min-height: 0px !important;">
+    
+    <div class="ad-text" data-test-label="ad-text">ADVERTISEMENT</div>
+    <ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_4_host" style="border: medium; height: 600px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;" tabindex="0" title="Advertisement" aria-label="Advertisement"><iframe id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;border:0;width:300px;height:600px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="bigO_cheatSheet_files/ads.htm" data-google-container-id="a!5" data-google-query-id="CO7f6Y6R3oEDFdmFdwEdfnwMOA" data-load-complete="true"></iframe></div></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper" style="height: auto !important; min-height: 0px !important;">
+    
+    <div class="ad-text" data-test-label="ad-text">ADVERTISEMENT</div>
+    <ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_5_host" style="border: medium; height: 600px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;" tabindex="0" title="Advertisement" aria-label="Advertisement"><iframe id="aswift_5" name="aswift_5" style="left:0;position:absolute;top:0;border:0;width:300px;height:600px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="bigO_cheatSheet_files/ads.htm" data-google-container-id="a!6" data-google-query-id="CJ3EsOWh3oEDFRat0QQd7eAFKQ" data-load-complete="true"></iframe></div></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper" style="height: auto !important; min-height: 0px !important;">
+    
+    <div class="ad-text" data-test-label="ad-text">ADVERTISEMENT</div>
+    <ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_6_host" style="border: medium; height: 600px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;" tabindex="0" title="Advertisement" aria-label="Advertisement"><iframe id="aswift_6" name="aswift_6" style="left:0;position:absolute;top:0;border:0;width:300px;height:600px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="bigO_cheatSheet_files/ads.htm" data-google-container-id="a!7" data-google-query-id="COGu8uah3oEDFQEFTwgdyXAEHw" data-load-complete="true"></iframe></div></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper" style="height: auto !important; min-height: 0px !important;">
+    
+    <div class="ad-text" data-test-label="ad-text">ADVERTISEMENT</div>
+    <ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_7_host" style="border: medium; height: 600px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;" tabindex="0" title="Advertisement" aria-label="Advertisement"><iframe id="aswift_7" name="aswift_7" style="left:0;position:absolute;top:0;border:0;width:300px;height:600px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="bigO_cheatSheet_files/ads.htm" data-google-container-id="a!8" data-google-query-id="CMrvre2h3oEDFZcKTwgdsfUA4g" data-load-complete="true"></iframe></div></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper" style="height: auto !important; min-height: 0px !important;">
+    
+    <div class="ad-text" data-test-label="ad-text">ADVERTISEMENT</div>
+    <ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_8_host" style="border: medium; height: 600px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;" tabindex="0" title="Advertisement" aria-label="Advertisement"><iframe id="aswift_8" name="aswift_8" style="left:0;position:absolute;top:0;border:0;width:300px;height:600px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="bigO_cheatSheet_files/ads.htm" data-google-container-id="a!9" data-google-query-id="CJ6Pmvqh3oEDFb42TwgdQ9oLZg" data-load-complete="true"></iframe></div></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ADVERTISEMENT</div>
+    <ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"><div id="aswift_9_host" style="border: medium; height: 600px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                                    <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ADVERTISEMENT</div>
+    <ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"><div id="aswift_10_host" style="border: medium; height: 600px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                                
+                            </div>
+                        
+                    </div>
+                    <hr>
+                    
+                        <div class="post-full-author-header" data-test-label="author-header-with-bio">
+                            
+                                
+    
+    
+    
+
+    <section class="author-card" data-test-label="author-card">
+        
+            
+    <img srcset="bigO_cheatSheet_files/1654890413623.jpg 60w" sizes="60px" src="bigO_cheatSheet_files/1654890413623.jpg" class="author-profile-image" alt="Joel Olawanle" width="800" height="800" onerror="this.style.display='none'" loading="lazy" data-test-label="profile-image">
+  
+        
+
+        <section class="author-card-content ">
+            <span class="author-card-name">
+                <a href="https://www.freecodecamp.org/news/author/joel-olawanle/" data-test-label="profile-link">
+                    
+                        Joel Olawanle
+                    
+                </a>
+            </span>
+            
+                
+                    <p data-test-label="author-bio">Frontend Developer &amp; Technical Writer</p>
+                
+            
+        </section>
+    </section>
+
+                            
+                        </div>
+                        <hr>
+                    
+
+                    
+                    
+                        
+    
+
+
+<p data-test-label="social-row-cta" class="social-row">
+    If you read this far, thank the author to show them you care. <button id="tweet-btn" class="cta-button" data-test-label="tweet-button" onclick="window.open(
+    'https://twitter.com/intent/tweet?text=Thank%20you%20%40olawanle_joel%20for%20writing%20this%20helpful%20article.%0A%0ABig%20O%20Cheat%20Sheet%20%E2%80%93%20Time%20Complexity%20Chart%0A%0Ahttps://www.freecodecamp.org/news/big-o-cheat-sheet-time-complexity-chart/',
+    'share-twitter',
+    'width=550, height=235'
+  ); return false;">Say Thanks</button>
+</p>
+
+
+    
+    <script>document.addEventListener("DOMContentLoaded",(()=>{const t=document.getElementById("tweet-btn"),e=window.location,n="Big%20O%20Cheat%20Sheet%20%E2%80%93%20Time%20Complexity%20Chart".replace(/&#39;/g,"%27"),o="",i="@olawanle_joel",r=Boolean("");let l;if(r&&(o||i)){const t={originalPostAuthor:"",currentPostAuthor:"Joel Olawanle"};l=encodeURIComponent(`Thank you ${o||t.originalPostAuthor} for writing this helpful article, and ${i||t.currentPostAuthor} for translating it.`)}else!r&&i&&(l=encodeURIComponent(`Thank you ${i} for writing this helpful article.`));const a=`window.open(\n    '${l?`https://twitter.com/intent/tweet?text=${l}%0A%0A${n}%0A%0A${e}`:`https://twitter.com/intent/tweet?text=${n}%0A%0A${e}`}',\n    'share-twitter',\n    'width=550, height=235'\n  ); return false;`;t.setAttribute("onclick",a)}));</script>
+
+
+                        
+
+<div class="learn-cta-row" data-test-label="learn-cta-row">
+    <p>
+        Learn to code for free. freeCodeCamp's open source curriculum 
+has helped more than 40,000 people get jobs as developers. <a href="https://www.freecodecamp.org/learn/" class="cta-button" id="learn-to-code-cta" rel="noopener noreferrer" target="_blank">Get started</a>
+    </p>
+</div>
+
+                    
+                </section>
+                
+                    <div class="banner-ad bottom">
+                        <div class="ad-wrapper" data-test-label="ad-wrapper">
+    
+    <div class="ad-text" data-test-label="ad-text">ADVERTISEMENT</div>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"><div id="aswift_11_host" style="border: medium; height: 280px; width: 1060px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+                    </div>
+                
+            </article>
+        </div>
+    </main>
+
+
+            
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-top">
+            <div class="footer-desc-col">
+                <p data-test-label="tax-exempt-status">freeCodeCamp is a
+ donor-supported tax-exempt 501(c)(3) charity organization (United 
+States Federal Tax Identification Number: 82-0779546)</p>
+                <p data-test-label="mission-statement">Our mission: to 
+help people learn to code for free. We accomplish this by creating 
+thousands of videos, articles, and interactive coding lessons - all 
+freely available to the public. We also have thousands of freeCodeCamp 
+study groups around the world.</p>
+                <p data-test-label="donation-initiatives">Donations to freeCodeCamp go toward our education initiatives, and help pay for servers, services, and staff.</p>
+                <p class="footer-donation" data-test-label="donate-text">
+                    You can <a href="https://www.freecodecamp.org/donate/" class="inline" rel="noopener noreferrer" target="_blank">make a tax-deductible donation here</a>.
+                </p>
+            </div>
+            <div class="trending-guides" data-test-label="trending-guides">
+                <div class="col-header">Trending Guides</div>
+                <div class="trending-guides-row">
+                    <div class="footer-col footer-col-1">
+                        <a href="https://www.freecodecamp.org/news/check-if-an-object-is-empty-in-javascript/" rel="noopener noreferrer" target="_blank">JS isEmpty Equivalent
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/how-to-submit-a-form-with-javascript/" rel="noopener noreferrer" target="_blank">Submit a Form with JS
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/how-to-add-to-a-list-in-python-list-addition-tutorial/" rel="noopener noreferrer" target="_blank">Add to List in Python
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/grep-command-in-linux-usage-options-and-syntax-examples/" rel="noopener noreferrer" target="_blank">Grep Command in Linux
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/how-to-convert-a-string-to-an-integer-in-java/" rel="noopener noreferrer" target="_blank">String to Int in Java
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/adding-to-a-dict-in-python-how-to-add-to-a-dictionary/" rel="noopener noreferrer" target="_blank">Add to Dict in Python
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/java-for-loop-example/" rel="noopener noreferrer" target="_blank">Java For Loop Example
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/matplotlib-figure-size-change-plot-size-in-python/" rel="noopener noreferrer" target="_blank">Matplotlib Figure Size
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/database-normalization-1nf-2nf-3nf-table-examples/" rel="noopener noreferrer" target="_blank">Database Normalization
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/list-within-a-list-in-python-initialize-a-nested-list/" rel="noopener noreferrer" target="_blank">Nested Lists in Python
+                        </a>
+                    </div>
+                    <div class="footer-col footer-col-2">
+                        <a href="https://www.freecodecamp.org/news/coalesce-sql-example-postgresql-and-sql-server-functions/" rel="noopener noreferrer" target="_blank">Coalesce SQL
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/python-join-how-to-combine-a-list-into-a-string-in-python/" rel="noopener noreferrer" target="_blank">Python join()
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/javascript-post-request-how-to-send-an-http-post-request-in-js/" rel="noopener noreferrer" target="_blank">JS POST Request
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/javascript-type-checking-how-to-check-type-in-js-with-typeof/" rel="noopener noreferrer" target="_blank">JS Type Checking
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/how-to-read-a-file-line-by-line-in-python/" rel="noopener noreferrer" target="_blank">Read Python File
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/solid-design-principles-in-software-development/" rel="noopener noreferrer" target="_blank">SOLID Principles
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/how-to-sort-a-list-in-java/" rel="noopener noreferrer" target="_blank">Sort a List in Java
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/for-loops-in-python-with-example-code/" rel="noopener noreferrer" target="_blank">For Loops in Python
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/javascript-2d-arrays/" rel="noopener noreferrer" target="_blank">JavaScript 2D Array
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/sql-convert-the-date-to-string-or-datetime-function-2/" rel="noopener noreferrer" target="_blank">SQL CONVERT Function
+                        </a>
+                    </div>
+                    <div class="footer-col footer-col-3">
+                        <div class="footer-left">
+                            <a href="https://www.freecodecamp.org/news/how-to-rename-a-column-in-pandas/" rel="noopener noreferrer" target="_blank">Rename Column in Pandas
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/how-to-delete-a-file-in-python-and-remove-a-directory-too/" rel="noopener noreferrer" target="_blank">Delete a File in Python
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/k-nearest-neighbors-algorithm-classifiers-and-model-example/" rel="noopener noreferrer" target="_blank">K-Nearest Neighbors Algo
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/iferror-function-in-excel-example/" rel="noopener noreferrer" target="_blank">iferror Function in Excel
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/remove-from-string-in-python-how-to-remove-characters-from-a-string/" rel="noopener noreferrer" target="_blank">Remove From String Python
+                            </a>
+                        </div>
+
+                        <div class="footer-right">
+                            <a href="https://www.freecodecamp.org/news/how-to-make-a-file-in-linux-from-the-command-line-create-a-file-in-terminal/" rel="noopener noreferrer" target="_blank">Create a File in Terminal
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/how-to-clear-formatting-in-excel/" rel="noopener noreferrer" target="_blank">Clear Formatting in Excel
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/accounting-number-format-in-excel-how-to-apply-it-to-selected-cells/" rel="noopener noreferrer" target="_blank">Accounting Num Format Excel
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/how-to-check-if-a-file-exists-in-python/" rel="noopener noreferrer" target="_blank">Check if File Exists Python
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/dictionary-iteration-in-python/" rel="noopener noreferrer" target="_blank">Iterate Over Dict in Python
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="col-header" data-test-label="our-nonprofit">Our Charity</div>
+            <div class="footer-divider"></div>
+            <div class="our-nonprofit">
+                <a href="https://www.freecodecamp.org/news/about/" rel="noopener noreferrer" target="_blank" data-test-label="about">
+                    About
+                </a>
+                <a href="https://www.linkedin.com/school/free-code-camp/people/" rel="noopener noreferrer" target="_blank" data-test-label="alumni">
+                    Alumni Network
+                </a>
+                <a href="https://github.com/freeCodeCamp/" rel="noopener noreferrer" target="_blank" data-test-label="open-source">
+                    Open Source
+                </a>
+                <a href="https://www.freecodecamp.org/news/shop/" rel="noopener noreferrer" target="_blank" data-test-label="shop">
+                    Shop
+                </a>
+                <a href="https://www.freecodecamp.org/news/support/" rel="noopener noreferrer" target="_blank" data-test-label="support">
+                    Support
+                </a>
+                <a href="https://www.freecodecamp.org/news/sponsors/" rel="noopener noreferrer" target="_blank" data-test-label="sponsors">
+                    Sponsors
+                </a>
+                <a href="https://www.freecodecamp.org/news/academic-honesty-policy/" rel="noopener noreferrer" target="_blank" data-test-label="honesty">
+                    Academic Honesty
+                </a>
+                <a href="https://www.freecodecamp.org/news/code-of-conduct/" rel="noopener noreferrer" target="_blank" data-test-label="coc">
+                    Code of Conduct
+                </a>
+                <a href="https://www.freecodecamp.org/news/privacy-policy/" rel="noopener noreferrer" target="_blank" data-test-label="privacy">
+                    Privacy Policy
+                </a>
+                <a href="https://www.freecodecamp.org/news/terms-of-service/" rel="noopener noreferrer" target="_blank" data-test-label="tos">
+                    Terms of Service
+                </a>
+                <a href="https://www.freecodecamp.org/news/copyright-policy/" rel="noopener noreferrer" target="_blank" data-test-label="copyright">
+                    Copyright Policy
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+        </div>
+
+        
+        
+        
+
+        <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5D6RKKP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+        
+    <script defer="defer" src="bigO_cheatSheet_files/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon="{&quot;rayId&quot;:&quot;811320ddcd9e7c3d&quot;,&quot;token&quot;:&quot;bdb993c6dde44e178aabd9555e75e4f4&quot;,&quot;version&quot;:&quot;2023.8.0&quot;,&quot;si&quot;:100}" crossorigin="anonymous"></script>
+
+
+<ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_0_host" style="border: medium; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;" tabindex="0" title="Advertisement" aria-label="Advertisement"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="bigO_cheatSheet_files/ads_009.htm" data-google-container-id="a!1" data-load-complete="true"></iframe></div></ins><iframe src="bigO_cheatSheet_files/aframe.htm" width="0" height="0" style="display: none;"></iframe><span style="border-radius: 10px !important; text-indent: 12px !important; width: auto !important; height: 20px !important; padding: 0px 8px !important; text-align: center !important; vertical-align: middle !important; font: bold 11px / 20px &quot;Helvetica Neue&quot;, Helvetica, sans-serif !important; color: rgb(255, 255, 255) !important; background: rgb(230, 0, 35) url(&quot;data:image/svg+xml;base64,PHN2ZyBpZD0ic291cmNlIiB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iNiIgY3k9IjYiIHI9IjYiIGZpbGw9IiNFNjAwMjMiPjwvY2lyY2xlPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTAgNkMwIDguNTYxNSAxLjYwNTUgMTAuNzQ4NSAzLjg2NSAxMS42MDlDMy44MSAxMS4xNDA1IDMuNzUxNSAxMC4zNjggMy44Nzc1IDkuODI2QzMuOTg2IDkuMzYgNC41NzggNi44NTcgNC41NzggNi44NTdDNC41NzggNi44NTcgNC4zOTk1IDYuNDk5NSA0LjM5OTUgNS45N0M0LjM5OTUgNS4xNCA0Ljg4MDUgNC41MiA1LjQ4IDQuNTJDNS45OSA0LjUyIDYuMjM2IDQuOTAyNSA2LjIzNiA1LjM2MUM2LjIzNiA1Ljg3MzUgNS45MDk1IDYuNjM5NSA1Ljc0MSA3LjM1QzUuNjAwNSA3Ljk0NDUgNi4wMzk1IDguNDI5NSA2LjYyNTUgOC40Mjk1QzcuNjg3IDguNDI5NSA4LjUwMzUgNy4zMSA4LjUwMzUgNS42OTRDOC41MDM1IDQuMjYzNSA3LjQ3NTUgMy4yNjQgNi4wMDggMy4yNjRDNC4zMDkgMy4yNjQgMy4zMTE1IDQuNTM4NSAzLjMxMTUgNS44NTZDMy4zMTE1IDYuMzY5NSAzLjUwOSA2LjkxOTUgMy43NTYgNy4yMTlDMy44MDQ1IDcuMjc4NSAzLjgxMiA3LjMzIDMuNzk3NSA3LjM5MDVDMy43NTIgNy41Nzk1IDMuNjUxIDcuOTg1IDMuNjMxNSA4LjA2OEMzLjYwNSA4LjE3NyAzLjU0NSA4LjIwMDUgMy40MzE1IDguMTQ3NUMyLjY4NTUgNy44MDA1IDIuMjE5NSA2LjcxIDIuMjE5NSA1LjgzNEMyLjIxOTUgMy45NDk1IDMuNTg4IDIuMjE5NSA2LjE2NTUgMi4yMTk1QzguMjM3NSAyLjIxOTUgOS44NDggMy42OTYgOS44NDggNS42NjlDOS44NDggNy43Mjc1IDguNTUwNSA5LjM4NDUgNi43NDg1IDkuMzg0NUM2LjE0MyA5LjM4NDUgNS41NzQ1IDkuMDY5NSA1LjM3OTUgOC42OThDNS4zNzk1IDguNjk4IDUuMDggOS44MzkgNS4wMDc1IDEwLjExOEM0Ljg2NjUgMTAuNjYgNC40NzU1IDExLjM0NiA0LjIzMyAxMS43MzU1QzQuNzkyIDExLjkwNzUgNS4zODUgMTIgNiAxMkM5LjMxMzUgMTIgMTIgOS4zMTM1IDEyIDZDMTIgMi42ODY1IDkuMzEzNSAwIDYgMEMyLjY4NjUgMCAwIDIuNjg2NSAwIDZaIiBmaWxsPSJ3aGl0ZSI+PC9wYXRoPgo8L3N2Zz4=&quot;) 4px 50% / 12px 12px no-repeat !important; position: absolute !important; opacity: 1 !important; z-index: 8675309 !important; display: none; cursor: pointer !important; border: medium !important; top: 4812px; left: 432px;">Save</span><span style="width: 24px !important; height: 24px !important; background: rgba(0, 0, 0, 0.4) url(&quot;data:image/svg+xml;base64,PHN2ZyBpZD0ic291cmNlIiB3aWR0aD0iMjIiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAyMiAyMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTEiIGN5PSIxMSIgcj0iMTEiIGZpbGw9ImJsYWNrIiBmaWxsLW9wYWNpdHk9IjAuOCI+PC9jaXJjbGU+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTUuMDgzNCA0LjU4MzMzSDEzLjMzMzRWNS43NDk5OUgxNS4wODM0QzE1LjcyNjggNS43NDk5OSAxNi4yNSA2LjI3MzI0IDE2LjI1IDYuOTE2NjZWOC42NjY2NkgxNy40MTY3VjYuOTE2NjZDMTcuNDE2NyA1LjYyOTgzIDE2LjM3MDIgNC41ODMzMyAxNS4wODM0IDQuNTgzMzNaTTE2LjI1IDE1LjA4MzNDMTYuMjUgMTUuNzI2NyAxNS43MjY4IDE2LjI1IDE1LjA4MzQgMTYuMjVIMTMuMzMzNFYxNy40MTY3SDE1LjA4MzRDMTYuMzcwMiAxNy40MTY3IDE3LjQxNjcgMTYuMzcwMiAxNy40MTY3IDE1LjA4MzNWMTMuMzMzM0gxNi4yNVYxNS4wODMzWk01Ljc1MDA0IDE1LjA4MzNWMTMuMzMzM0g0LjU4MzM3VjE1LjA4MzNDNC41ODMzNyAxNi4zNzAyIDUuNjI5ODcgMTcuNDE2NyA2LjkxNjcxIDE3LjQxNjdIOC42NjY3MVYxNi4yNUg2LjkxNjcxQzYuMjczMjkgMTYuMjUgNS43NTAwNCAxNS43MjY3IDUuNzUwMDQgMTUuMDgzM1pNNS43NTAwNCA2LjkxNjY2QzUuNzUwMDQgNi4yNzMyNCA2LjI3MzI5IDUuNzQ5OTkgNi45MTY3MSA1Ljc0OTk5SDguNjY2NzFWNC41ODMzM0g2LjkxNjcxQzUuNjI5ODcgNC41ODMzMyA0LjU4MzM3IDUuNjI5ODMgNC41ODMzNyA2LjkxNjY2VjguNjY2NjZINS43NTAwNFY2LjkxNjY2Wk05LjI1MDA0IDEwLjcwODNDOS4yNTAwNCA5LjkwNDQ5IDkuOTA0NTQgOS4yNDk5OSAxMC43MDg0IDkuMjQ5OTlDMTEuNTEyMiA5LjI0OTk5IDEyLjE2NjcgOS45MDQ0OSAxMi4xNjY3IDEwLjcwODNDMTIuMTY2NyAxMS41MTIyIDExLjUxMjIgMTIuMTY2NyAxMC43MDg0IDEyLjE2NjdDOS45MDQ1NCAxMi4xNjY3IDkuMjUwMDQgMTEuNTEyMiA5LjI1MDA0IDEwLjcwODNaTTEzLjYyNSAxNC41QzEzLjg0OSAxNC41IDE0LjA3MyAxNC40MTQ4IDE0LjI0NCAxNC4yNDM5QzE0LjU4NTIgMTMuOTAyMSAxNC41ODUyIDEzLjM0NzkgMTQuMjQ0IDEzLjAwNjFMMTMuMDcwMyAxMS44MzNDMTMuMjM0MiAxMS40OTA2IDEzLjMzMzQgMTEuMTEyNiAxMy4zMzM0IDEwLjcwODNDMTMuMzMzNCA5LjI2MTA4IDEyLjE1NTYgOC4wODMzMyAxMC43MDg0IDguMDgzMzNDOS4yNjExMiA4LjA4MzMzIDguMDgzMzcgOS4yNjEwOCA4LjA4MzM3IDEwLjcwODNDOC4wODMzNyAxMi4xNTU2IDkuMjYxMTIgMTMuMzMzMyAxMC43MDg0IDEzLjMzMzNDMTEuMTEyNiAxMy4zMzMzIDExLjQ5MDYgMTMuMjM0MiAxMS44MzMgMTMuMDcwMkwxMy4wMDYxIDE0LjI0MzlDMTMuMTc3IDE0LjQxNDggMTMuNDAxIDE0LjUgMTMuNjI1IDE0LjVaIiBmaWxsPSJ3aGl0ZSI+PC9wYXRoPgo8L3N2Zz4=&quot;) 50% 50% / 24px 24px no-repeat !important; position: absolute !important; opacity: 1 !important; z-index: 8675309 !important; display: none; cursor: pointer !important; border: medium !important; border-radius: 12px; top: 4812px; left: 1110px;"></span></body><iframe id="google_esf" name="google_esf" src="bigO_cheatSheet_files/zrt_lookup.htm" style="display: none;"></iframe></html>
