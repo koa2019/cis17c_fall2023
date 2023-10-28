@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=curvefitlinearalgebra_v1
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/curvefitlinearalgebra_v1
+CND_ARTIFACT_NAME_Debug=lehrscurvefitlinearalgebra_v1
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/lehrscurvefitlinearalgebra_v1
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=curvefitlinearalgebrav1.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/curvefitlinearalgebrav1.tar
+CND_PACKAGE_NAME_Debug=lehrscurvefitlinearalgebrav1.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/lehrscurvefitlinearalgebrav1.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=curvefitlinearalgebra_v1
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/curvefitlinearalgebra_v1
+CND_ARTIFACT_NAME_Release=lehrscurvefitlinearalgebra_v1
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/lehrscurvefitlinearalgebra_v1
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=curvefitlinearalgebrav1.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/curvefitlinearalgebrav1.tar
+CND_PACKAGE_NAME_Release=lehrscurvefitlinearalgebrav1.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/lehrscurvefitlinearalgebrav1.tar
 #
 # include compiler specific variables
 #
